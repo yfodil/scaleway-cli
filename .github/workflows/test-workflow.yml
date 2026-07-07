@@ -1,0 +1,15 @@
+name: arc-test
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  hello:
+    runs-on: arc-cli
+    steps:
+      - run: echo "Running on an ARC runner -> $(hostname)"
+      - run: |
+          echo "kernel: $(uname -a)"
+          echo "sleeping 30s so you can watch the pod in kubectl"
+          sleep 30
