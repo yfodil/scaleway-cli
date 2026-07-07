@@ -6,7 +6,8 @@ on:
 
 jobs:
   hello:
-    runs-on: arc-cli
+    # Must match runnerScaleSetName in runner-set-values.yaml
+    runs-on: arc-cli-v2
     steps:
       - run: echo "Running on an ARC runner -> $(hostname)"
       - run: |
